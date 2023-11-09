@@ -58,4 +58,5 @@ if (process.env.POLYGONSCAN !== undefined && process.env.POLYGONSCAN !== '') {
 if (process.env.ETHERSCAN !== undefined && process.env.ETHERSCAN !== '') {
   hardhatConfigs.etherscan = { apiKey: { mainnet: process.env.ETHERSCAN, mumbai: process.env.ETHERSCAN, sepolia: process.env.ETHERSCAN, goerli: process.env.ETHERSCAN } }
 }
+
 module.exports = hardhatConfigs;
