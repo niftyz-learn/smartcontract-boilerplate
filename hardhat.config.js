@@ -11,10 +11,13 @@ let hardhatConfigs = {
         interval: 3000
       }
     },
-    rinkeby: {
+    mumbai: {
       url: provider
     },
-    ropsten: {
+    sepolia: {
+      url: provider
+    },
+    goerli: {
       url: provider
     },
     mainnet: {
@@ -53,23 +56,6 @@ if (process.env.POLYGONSCAN !== undefined && process.env.POLYGONSCAN !== '') {
 }
 
 if (process.env.ETHERSCAN !== undefined && process.env.ETHERSCAN !== '') {
-  hardhatConfigs.etherscan = { apiKey: { mainnet: process.env.ETHERSCAN, rinkeby: process.env.ETHERSCAN, ropsten: process.env.ETHERSCAN, goerli: process.env.ETHERSCAN } }
-}
-if (process.env.NETWORK === 'hardhat' || process.env.NETWORK === 'localhost') {
-  hardhatConfigs.etherscan = {
-    apiKey: {
-      hardhat: "abc"
-    },
-    customChains: [
-      {
-        network: "hardhat",
-        chainId: 31337,
-        urls: {
-          apiURL: "http://localhost/api",
-          browserURL: "http://localhost/api"
-        }
-      }
-    ]
-  }
+  hardhatConfigs.etherscan = { apiKey: { mainnet: process.env.ETHERSCAN, mumbai: process.env.ETHERSCAN, sepolia: process.env.ETHERSCAN, goerli: process.env.ETHERSCAN } }
 }
 module.exports = hardhatConfigs;
