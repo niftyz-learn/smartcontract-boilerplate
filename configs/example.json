@@ -1,5 +1,5 @@
 {
-    "network": "hardhat",
+    "network": "localhost",
     "contract_name": "Greetings",
     "constructor_arguments": [
         "Hello, dude!"
